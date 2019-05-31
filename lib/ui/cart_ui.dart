@@ -1,4 +1,5 @@
 import 'package:fairfruit/models/cart.dart';
+import 'package:fairfruit/ui/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:fairfruit/Bloc/cart_bloc.dart';
 import 'package:fairfruit/Bloc/cart_provider.dart';
@@ -27,10 +28,6 @@ class CartUi extends StatelessWidget {
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(
-                    "assets/tenor.gif",
-                    fit: BoxFit.fitWidth,
-                  ),
                   Text("Carrinho vazio."),
                 ],
               ));
@@ -130,11 +127,7 @@ class CartUi extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                              "Sub-total: ৳ ${snapshot.data.getTotalPrice()}")),
+                      padding: const EdgeInsets.all(16.0),
                     ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
@@ -146,9 +139,17 @@ class CartUi extends StatelessWidget {
                             width: MediaQuery.of(context).size.width / 2,
                             height: 55,
                             child: FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Payment(
+                                          snapshot.data, cartBloc,)),
+                                );
+
+                              },
                               child: Text(
-                                  "Preço total: R\$ ${snapshot.data.getTotalPrice()}"),
+                                  "Pagar"),
                             ),
                           ),
                           Container(
@@ -158,7 +159,7 @@ class CartUi extends StatelessWidget {
                             child: FlatButton(
                               onPressed: () {},
                               child:
-                                  Text("Total de itens: ${snapshot.data.getTotalItems()}"),
+                              Text("Total de itens: ${snapshot.data.getTotalItems()}\nTotal a pagar: R\$ ${snapshot.data.getTotalPrice()}"),
                             ),
                           ),
                         ],

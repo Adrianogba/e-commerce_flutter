@@ -23,11 +23,11 @@ class _MenuState extends State<Menu> {
     super.initState();
 
     List<Product> list = [
-      Product(2, "Alcatra Bovino - 5Kg", "https://via.placeholder.com/300", "This is a hat",
+      Product(2, "Alcatra Bovino", "https://via.placeholder.com/300", "This is a hat",
           "100", 4, true, "Carnes"),
-      Product(2, "Batata Inglesa - 5Kg", "https://via.placeholder.com/300", "This is a Bat",
+      Product(2, "Batata Inglesa", "https://via.placeholder.com/300", "This is a Bat",
           "120", 4.5, true, "Verduras"),
-      Product(2, "Pimenta - 500g", "https://via.placeholder.com/300", "This is a Shoe",
+      Product(2, "Pimenta", "https://via.placeholder.com/300", "This is a Shoe",
           "200", 4.6, true, "Temperos"),
     ];
     myList = new ProductList(list);

@@ -401,39 +401,7 @@ class _ProductDetailsState extends State<ProductDetails>
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Expanded(
-                    flex: 4,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 3,
-                      height: (MediaQuery.of(context).size.height / 2) / 8 - 2,
-                      child: RaisedButton(
-                        color: Colors.yellow.shade900,
-                        onPressed: () {},
-                        child: FittedBox(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(
-                                Icons.shopping_cart,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "Comprar\nagora",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 18),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+
                   Expanded(
                     flex: 4,
                     child: Container(
@@ -450,13 +418,25 @@ class _ProductDetailsState extends State<ProductDetails>
                           });
                         },
                         child: FittedBox(
-                          child: Text(
-                            "Adicionar\nao carrinho",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                Icons.shopping_cart,
                                 color: Colors.white,
-                                fontSize: 18),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Adicionar\nao carrinho",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 18),
+                              ),
+                            ],
                           ),
                         ),
                       ),
